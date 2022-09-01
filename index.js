@@ -1,125 +1,122 @@
-var friends = ['Ali', 'Eli', 'Qoli', 'Fati']
+var a = 28
 
-console.log(friends)
-console.log(friends.length)
-console.log(friends[0])
-console.log(friends[1])
-console.log(friends[3])
-console.log(friends[4])
+// a % 2 ? console.log('Odd') : console.log('Even')
 
-var arr = [11, 'ali', true, () => {}, { name: 'Qoli' }, []]
+// console.log(a % 2 ? 'Odd' : 'Even')
 
-console.log(typeof arr)
+// Not recommended
+// if (a % 2) console.log('Odd')
+// else console.log('Even')
 
-// // 74FDEA
-// var family = {
-//   father: 'Mohammad'
+// var char = 'a'
+
+// switch (char) {
+//   case 'A':
+//   case 'a':
+//     console.log('Char is a')
+//     break
+
+//   case 'b':
+//     console.log('Char is b')
+//     break
+
+//   default:
+//     console.log('Char is not a and b')
 // }
 
-// // 12BCAD
-// var obj1 = { name: 'Ali', age: 33, family: family }
+// console.log(char)
 
-// // AB4CDA
-// var obj2 = { name: 'Ali', age: 34, family }
+// var a = 0
 
-// console.log(obj1 === obj2)
-// console.log(obj1.name === obj2.name)
-// console.log(obj1.family === obj2.family)
-// console.log(obj1.family.father === obj2.family.father)
-
-// // 12ED2A
-// var ali = {
-//   name: 'Ali',
-//   family: 'Mousavi'
+// if (a > 0) {
+//   console.log('Positive')
+// } else if (a < 0) {
+//   console.log('Negative')
+// } else {
+//   console.log('Zero')
 // }
 
-// console.log(ali)
+// var a = 56
 
-// // 12ED2A
-// var hasan = ali
+// // if (a % 2 === 1) {
+// if (a % 2) {
+//   console.log('Odd')
+// } else {
+//   console.log('Even')
+// }
 
-// console.log(hasan)
-
-// hasan.name = 'Hasan'
-
-// console.log(ali)
-// console.log(hasan)
-
-// console.log(ali === hasan)
-
-// const obj = {
+// var user = {
 //   firstName: 'Ali',
 //   lastName: 'Mousavi',
-//   age: 33
-//   // family: {
-//   //   // father: {
-//   //   //   // name: 'Mohammad',
-//   //   //   family: 'Mousavi'
-//   //   // },
-//   //   mother: 'Hajar'
-//   // }
+//   fullName: 'Ali Mouavi'
+//   //   username: 'aliaqa'
 // }
 
-// console.log(1)
-
-// console.log(obj.family?.father?.name)
-
-// console.log(2)
-
-// console.log(obj.firstName)
-// console.log(obj.lastName)
-// console.log(obj.age)
-
-// var propertyName = 'age'
-
-// console.log(obj[propertyName]) // Correct
-// console.log(obj.propertyName) // Wrong
-
-// var str = 'Salam  \uD83D\uDE00 ali'
-
-// console.log(str)
-
-// var a = 2 - 'Ali'
-
-// // if (a === NaN) { // Wrong
-// if (Number.isNaN(a)) { // Correct
-//   // Wrong
-//   // ...
+// if (user.fullName && user.username) {
+//   console.log('Welcome')
+// } else {
+//   console.log('Please login')
 // }
 
-// camelCaseNaming    myFirstName
-// PascalCaseNaming   MyFirstName
-// snake_case_naming  my_first_name
-// kebab-case-naming  my-first-name
-// UPPER_CASE_NAMING  MY_FIRST_NAME
+// var displayName =
+//   user.fullName ||
+//   user.lastName ||
+//   user.firstName ||
+//   user.username ||
+//   'Dear user'
 
-// ` ~ ! @ # $ % ^ & * () - _ + = | / \ [] {} : ; , . ' " ? > <
+// console.log(displayName)
+//  0  &  0   =>  0
+//  1  &  0   =>  0
+//  0  &  1   =>  0
+//  1  &  1   =>  1
 
-// var نام = 'علی'
+//  0  |  0   =>  0
+//  1  |  0   =>  1
+//  0  |  1   =>  1
+//  1  |  1   =>  1
 
-// console.log(نام)
+// var a = 1
 
-// var firstName = 'Ali'
+// console.log(Boolean(a) === true)
 
-// var lastName
+// var a = 2
 
-// lastName = 'Mousavi'
+// console.log(a == 3)
+// console.log(a)
 
-// console.log(firstName)
-// console.log(lastName)
+// console.log('b' + 'a' + +'a' + 'a')
 
-// lastName = 'Hasani'
+// var a = 5
 
-// console.log(lastName)
+// a++
 
-// var age = 33,
-//   gender = 'male'
+// a = a + 1
 
-// This is a log
-// console.log('Ali')
+// a += 1
 
-/*
-console.log('Salam')
+// a *= 2
 
-console.log('hello')
-*/
+// a /= 2
+
+// a -= 3
+
+// a -=- 1
+
+// console.log(a)
+
+// a -= -1
+
+// console.log(a)
+
+// var a = 5
+
+// var b = ++a
+
+// console.log(a, b)
+
+// var a = 29
+
+// console.log(a % 2)
+
+// console.log(5 + [5])
