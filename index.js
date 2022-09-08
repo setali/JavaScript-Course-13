@@ -1,122 +1,233 @@
-var a = 28
-
-// a % 2 ? console.log('Odd') : console.log('Even')
-
-// console.log(a % 2 ? 'Odd' : 'Even')
-
-// Not recommended
-// if (a % 2) console.log('Odd')
-// else console.log('Even')
-
-// var char = 'a'
-
-// switch (char) {
-//   case 'A':
-//   case 'a':
-//     console.log('Char is a')
-//     break
-
-//   case 'b':
-//     console.log('Char is b')
-//     break
-
-//   default:
-//     console.log('Char is not a and b')
+// function factorial (n) {
+//   return n === 1 ? 1 : n * factorial(n - 1)
 // }
 
-// console.log(char)
+// function factorial (n) {
+//   var result = 1
+//   while (n) {
+//     result *= n--
+//   }
 
-// var a = 0
+//   return result
+// }
+// function factorial (n) {
+//   var result = 1
+//   for (var i = n; i > 0; i--) {
+//     result *= i
+//   }
 
-// if (a > 0) {
-//   console.log('Positive')
-// } else if (a < 0) {
-//   console.log('Negative')
-// } else {
-//   console.log('Zero')
+//   return result
 // }
 
-// var a = 56
+// console.log(factorial(10493))
 
-// // if (a % 2 === 1) {
-// if (a % 2) {
-//   console.log('Odd')
-// } else {
-//   console.log('Even')
+// 5! = 5 * 4!
+// 4! = 4 * 3!
+// 3! = 3 * 2!
+// 2! = 2 * 1!
+// 1! = 1
+
+// 5! = 5 * 4 * 3 * 2 * 1
+// 4! = 4 * 3 * 2 * 1
+// 3! = 3 * 2 * 1
+// 2! = 2 * 1
+// 1! = 1
+
+// var arr = [
+//   2,
+//   7,
+//   'ali',
+//   function (a, b) {
+//     return a / b
+//   }
+// ]
+
+// function sum (a, b) {
+//   return a + b
 // }
 
-// var user = {
+// function sub (a, b) {
+//   return a - b
+// }
+
+// function noop () {}
+
+// function operate (a, b, cb = noop) {
+//   console.log(a, b, cb, typeof cb)
+//   return cb(a, b)
+// }
+
+// console.log(operate(3, 5, sum))
+// console.log(operate(30, 5, sub))
+// console.log(operate(30, 5, arr[3]))
+// console.log(
+//   operate(3, 5, function (a, b) {
+//     return a * b
+//   })
+// )
+
+// console.log(operate(1, 2))
+
+// console.log(sum(3, 5))
+// console.log(sub(30, 5))
+// console.log(arr[3](20, 5))
+
+// function sum (a = 10, b = 5, c = 0, d = 0, e = 0) {
+//   console.log('length', arguments.length)
+
+//   var result = 0
+
+//   for (var number of arguments) {
+//     result += number
+//   }
+
+//   return result
+// }
+
+// console.log(sum(4, 7, 6))
+// console.log(sum(4, 7))
+// console.log(sum())
+// console.log(sum(4, 6, 3, 1))
+// console.log(sum(4, 6, 3, 1, 8))
+
+// var sum = function (a, b) {
+//   return a + b
+// }
+
+// console.log(sum(2, 5))
+
+// function func () {
+//   for (var i = 0; i < 10; i++) {
+//     if (i === 5) {
+//       return
+//     }
+//     console.log(i)
+//   }
+//   console.log('Out for')
+// }
+
+// console.log(func())
+
+// function logHello () {
+//   console.log('hello')
+// }
+
+// logHello()
+// logHello()
+// logHello()
+// logHello()
+
+// function sum (a, b) {
+//   //   console.log(a + b)
+//   return a + b
+// }
+
+// var r = sum(2, 5)
+
+// console.log(r)
+
+// console.log(r + 5)
+
+// var person = {
 //   firstName: 'Ali',
 //   lastName: 'Mousavi',
-//   fullName: 'Ali Mouavi'
-//   //   username: 'aliaqa'
+//   family: {
+//     father: 'Mohammad',
+//     mother: 'Hajar'
+//   },
+//   age: 33,
+//   city: 'Shiraz',
+//   eye: 'brown',
+//   hair: 'brown'
 // }
 
-// if (user.fullName && user.username) {
-//   console.log('Welcome')
-// } else {
-//   console.log('Please login')
+// for (var key in person) {
+//   console.log(key, '=>', person[key])
 // }
 
-// var displayName =
-//   user.fullName ||
-//   user.lastName ||
-//   user.firstName ||
-//   user.username ||
-//   'Dear user'
+// console.log('firstName' in person)
+// console.log('name' in person)
 
-// console.log(displayName)
-//  0  &  0   =>  0
-//  1  &  0   =>  0
-//  0  &  1   =>  0
-//  1  &  1   =>  1
+// for (var el of person) { // wrong
+//   console.log(el)
+// }
 
-//  0  |  0   =>  0
-//  1  |  0   =>  1
-//  0  |  1   =>  1
-//  1  |  1   =>  1
+// var friends = ['Ali', 'Eli', 'Qoli', 'Fati', 'Zari']
 
-// var a = 1
+// for (var i = 0; i < friends.length; i++) {
+//   console.log(i, friends[i])
+// }
 
-// console.log(Boolean(a) === true)
+// for (var friend of friends) {
+//   console.log(friend)
+// }
 
-// var a = 2
+// for (var i = 0; i < friends.length; i++) {
+//   console.log(i, friends[i])
+// }
 
-// console.log(a == 3)
-// console.log(a)
+// for (var friend of friends) {
+//   console.log(friend)
+// }
 
-// console.log('b' + 'a' + +'a' + 'a')
+// var str = 'salam'
 
-// var a = 5
+// for (var el of str) {
+//   console.log(el)
+// }
 
-// a++
+// for (var i = 0; i < 10; i++) {
+//   if (i === 5) {
+//     break
+//   }
 
-// a = a + 1
+//   console.log(i)
+// }
+// for (var i = 0; i < 10; i++) {
+//   if (i % 3 === 0) {
+//     continue
+//   }
 
-// a += 1
+//   console.log(i)
+// }
 
-// a *= 2
+// var i = 15
 
-// a /= 2
+// do {
+//   console.log('salam', i)
+//   i++
+// } while (i < 10)
 
-// a -= 3
+// console.log(i)
 
-// a -=- 1
+// var n = 5
 
-// console.log(a)
+// var result = 1
 
-// a -= -1
+// // for (var i = n; i > 0; i--) {
+// //   result *= i
+// // }
 
-// console.log(a)
+// while (n) {
+//   result *= n--
+// }
 
-// var a = 5
+// console.log(result)
 
-// var b = ++a
+// var result = 0
 
-// console.log(a, b)
+// for (var i = 0; i <= 10; i++) {
+//   result = result + i
+// }
 
-// var a = 29
+// console.log(result)
 
-// console.log(a % 2)
+// for (var i = 0; i < 100; i = i + 5) {
+//   console.log('salam', i)
+// }
 
-// console.log(5 + [5])
+// var j = 0
+// while (j < 5) {
+//   console.log('salam')
+//   j++
+// }
