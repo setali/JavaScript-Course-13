@@ -1,233 +1,156 @@
-// function factorial (n) {
-//   return n === 1 ? 1 : n * factorial(n - 1)
-// }
+// AC12FA   => i => undefined => 0 => 1 => 2 => 3 => 4 => 5
 
-// function factorial (n) {
-//   var result = 1
-//   while (n) {
-//     result *= n--
-//   }
+// console.log(1)
 
-//   return result
-// }
-// function factorial (n) {
-//   var result = 1
-//   for (var i = n; i > 0; i--) {
-//     result *= i
-//   }
+// setTimeout(function () {
+//   console.log(2 + 2)
+// }, 0)
 
-//   return result
-// }
-
-// console.log(factorial(10493))
-
-// 5! = 5 * 4!
-// 4! = 4 * 3!
-// 3! = 3 * 2!
-// 2! = 2 * 1!
-// 1! = 1
-
-// 5! = 5 * 4 * 3 * 2 * 1
-// 4! = 4 * 3 * 2 * 1
-// 3! = 3 * 2 * 1
-// 2! = 2 * 1
-// 1! = 1
-
-// var arr = [
-//   2,
-//   7,
-//   'ali',
-//   function (a, b) {
-//     return a / b
-//   }
-// ]
-
-// function sum (a, b) {
-//   return a + b
-// }
-
-// function sub (a, b) {
-//   return a - b
-// }
-
-// function noop () {}
-
-// function operate (a, b, cb = noop) {
-//   console.log(a, b, cb, typeof cb)
-//   return cb(a, b)
-// }
-
-// console.log(operate(3, 5, sum))
-// console.log(operate(30, 5, sub))
-// console.log(operate(30, 5, arr[3]))
-// console.log(
-//   operate(3, 5, function (a, b) {
-//     return a * b
-//   })
-// )
-
-// console.log(operate(1, 2))
-
-// console.log(sum(3, 5))
-// console.log(sub(30, 5))
-// console.log(arr[3](20, 5))
-
-// function sum (a = 10, b = 5, c = 0, d = 0, e = 0) {
-//   console.log('length', arguments.length)
-
-//   var result = 0
-
-//   for (var number of arguments) {
-//     result += number
-//   }
-
-//   return result
-// }
-
-// console.log(sum(4, 7, 6))
-// console.log(sum(4, 7))
-// console.log(sum())
-// console.log(sum(4, 6, 3, 1))
-// console.log(sum(4, 6, 3, 1, 8))
-
-// var sum = function (a, b) {
-//   return a + b
-// }
-
-// console.log(sum(2, 5))
+// console.log(2)
 
 // function func () {
-//   for (var i = 0; i < 10; i++) {
-//     if (i === 5) {
-//       return
+//   var i
+//   for (i = 0; i < 5; i++) {
+//     setInterval(function () {
+//       console.log(i)
+//     }, 1000)
+//   }
+// }
+
+// func()
+
+// var counter = 1
+
+// var intervalId
+// setTimeout(function () {
+//   intervalId = setInterval(function () {
+//     console.log(counter++)
+//   }, 1000)
+
+//   console.log(intervalId)
+// }, 2000)
+
+// setTimeout(function () {
+//   clearInterval(intervalId)
+// }, 10000)
+
+// var counter = 1
+
+// setInterval(function () {
+//   console.log(counter++)
+// }, 1000)
+
+// console.log('a')
+// setTimeout(function () {
+//   console.log(1)
+// }, 2000)
+
+// console.log('b')
+// setTimeout(function () {
+//   console.log(2)
+// }, 2000)
+
+// console.log('c')
+// setTimeout(function () {
+//   console.log(3)
+// }, 2000)
+
+// console.log('d')
+
+// function counter () {
+//   var value = 0
+
+//   function increase () {
+//     console.log(++value)
+//   }
+
+//   function decrease () {
+//     console.log(--value)
+//   }
+
+//   return { increase, decrease }
+// }
+
+// var myCounter = counter()
+
+// console.log(myCounter)
+
+// var myCounter1 = counter()
+
+// console.log(myCounter1)
+
+// console.log(myCounter === myCounter1)
+
+// function func (a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c
 //     }
-//     console.log(i)
 //   }
-//   console.log('Out for')
 // }
 
-// console.log(func())
+// var func10 = func(10)
 
-// function logHello () {
-//   console.log('hello')
-// }
+// console.log(func10(40)(50))
 
-// logHello()
-// logHello()
-// logHello()
-// logHello()
+// var func30 = func10(20)
 
-// function sum (a, b) {
-//   //   console.log(a + b)
-//   return a + b
-// }
+// console.log(func30(60))
+// console.log(func30(40))
+// console.log(func30(10))
 
-// var r = sum(2, 5)
+// var func50 = func10(40)
 
-// console.log(r)
+// console.log(func50(80))
 
-// console.log(r + 5)
-
-// var person = {
-//   firstName: 'Ali',
-//   lastName: 'Mousavi',
-//   family: {
-//     father: 'Mohammad',
-//     mother: 'Hajar'
-//   },
-//   age: 33,
-//   city: 'Shiraz',
-//   eye: 'brown',
-//   hair: 'brown'
-// }
-
-// for (var key in person) {
-//   console.log(key, '=>', person[key])
-// }
-
-// console.log('firstName' in person)
-// console.log('name' in person)
-
-// for (var el of person) { // wrong
-//   console.log(el)
-// }
-
-// var friends = ['Ali', 'Eli', 'Qoli', 'Fati', 'Zari']
-
-// for (var i = 0; i < friends.length; i++) {
-//   console.log(i, friends[i])
-// }
-
-// for (var friend of friends) {
-//   console.log(friend)
-// }
-
-// for (var i = 0; i < friends.length; i++) {
-//   console.log(i, friends[i])
-// }
-
-// for (var friend of friends) {
-//   console.log(friend)
-// }
-
-// var str = 'salam'
-
-// for (var el of str) {
-//   console.log(el)
-// }
-
-// for (var i = 0; i < 10; i++) {
-//   if (i === 5) {
-//     break
-//   }
-
-//   console.log(i)
-// }
-// for (var i = 0; i < 10; i++) {
-//   if (i % 3 === 0) {
-//     continue
-//   }
-
-//   console.log(i)
-// }
-
-// var i = 15
-
-// do {
-//   console.log('salam', i)
-//   i++
-// } while (i < 10)
-
-// console.log(i)
-
-// var n = 5
-
-// var result = 1
-
-// // for (var i = n; i > 0; i--) {
-// //   result *= i
-// // }
-
-// while (n) {
-//   result *= n--
-// }
+// var result = func(10)(20)(30)
 
 // console.log(result)
 
-// var result = 0
+// console.log(a)
 
-// for (var i = 0; i <= 10; i++) {
-//   result = result + i
+// var a = 20
+
+// console.log(a)
+
+// func()
+
+// function func () {
+//   var a
+//   console.log(a)
+
+//   a = 10
+
+//   console.log(a)
 // }
 
-// console.log(result)
+// var c = 90
 
-// for (var i = 0; i < 100; i = i + 5) {
-//   console.log('salam', i)
+// function func1 () {
+//   var a = 10
+
+//   function func2 () {
+//     var a = 50
+//     var b = 30
+//     console.log('a:', a)
+//     console.log('c:', c)
+//     window.d = 100
+//   }
+
+//   function func3 () {
+//     console.log(a)
+//     // console.log('b', b)
+//     console.log(d)
+//     f = 200
+//   }
+
+//   console.log('1', a)
+//   func2()
+//   console.log(d)
+
+//   console.log('2', a)
+//   func3()
+//   console.log(f)
 // }
 
-// var j = 0
-// while (j < 5) {
-//   console.log('salam')
-//   j++
-// }
+// func1()
