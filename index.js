@@ -1,156 +1,177 @@
-// AC12FA   => i => undefined => 0 => 1 => 2 => 3 => 4 => 5
+// var numbers = [4, 1, 9, 11, 2, 36, 7, 1]
 
-// console.log(1)
+// var result = Math.max.apply({}, numbers)
 
-// setTimeout(function () {
-//   console.log(2 + 2)
-// }, 0)
+// console.log(result)
 
-// console.log(2)
+var firstName = 'Ali',
+  lastName = 'Mousavi'
 
-// function func () {
-//   var i
-//   for (i = 0; i < 5; i++) {
-//     setInterval(function () {
-//       console.log(i)
-//     }, 1000)
+function getFullName (greeting = 'Hello', byeMessage = 'Goodby') {
+  console.log(this)
+  console.log(greeting + ' ' + this.firstName + ' ' + this.lastName)
+  console.log(byeMessage + ' ' + this.firstName + ' ' + this.lastName)
+}
+
+var arlen = {
+  firstName: 'Arlen',
+  lastName: 'Saroyan'
+}
+
+// getFullName('salam', 'khadafez')
+
+// getFullName.call(arlen, 'Hi', 'Bye')
+
+var firoozeh = {
+  firstName: 'Firoozeh',
+  lastName: 'Dabaghi'
+}
+
+// getFullName.apply(firoozeh, ['Hi', 'Bye'])
+
+getFullName = getFullName.bind(arlen)
+
+console.log(getFullName)
+
+getFullName()
+
+// var obj1 = {
+//   name: 'Pulsar',
+//   bike: function () {
+//     console.log(this.name)
 //   }
 // }
 
-// func()
+// var obj2 = { name: 'Gixxer', bike: obj1.bike }
+// var name = 'Ninja'
+// var bike = obj1.bike
 
-// var counter = 1
+// bike()
+// obj1.bike()
+// obj2.bike()
 
-// var intervalId
-// setTimeout(function () {
-//   intervalId = setInterval(function () {
-//     console.log(counter++)
-//   }, 1000)
+// var firstName = 'Fathemeh'
+// var lastName = 'MoghadmNia'
 
-//   console.log(intervalId)
-// }, 2000)
-
-// setTimeout(function () {
-//   clearInterval(intervalId)
-// }, 10000)
-
-// var counter = 1
-
-// setInterval(function () {
-//   console.log(counter++)
-// }, 1000)
-
-// console.log('a')
-// setTimeout(function () {
-//   console.log(1)
-// }, 2000)
-
-// console.log('b')
-// setTimeout(function () {
-//   console.log(2)
-// }, 2000)
-
-// console.log('c')
-// setTimeout(function () {
-//   console.log(3)
-// }, 2000)
-
-// console.log('d')
-
-// function counter () {
-//   var value = 0
-
-//   function increase () {
-//     console.log(++value)
+// var ali = {
+//   firstName: 'Ali',
+//   lastName: 'Mousavi',
+//   getFullName () {
+//     console.log(this.firstName + ' ' + this.lastName)
 //   }
-
-//   function decrease () {
-//     console.log(--value)
-//   }
-
-//   return { increase, decrease }
 // }
 
-// var myCounter = counter()
+// var getFullName = ali.getFullName
 
-// console.log(myCounter)
+// getFullName()
 
-// var myCounter1 = counter()
+// var milad = {
+//   firstName: 'Milad',
+//   lastName: 'Ghajavand',
+//   getFullName
+// }
 
-// console.log(myCounter1)
+// var atefe = {
+//   firstName: 'Atefe',
+//   lastName: 'Sohrabi',
+//   getFullName
+// }
 
-// console.log(myCounter === myCounter1)
+// ali.getFullName()
 
-// function func (a) {
-//   return function (b) {
-//     return function (c) {
-//       return a + b + c
+// milad.getFullName()
+
+// atefe.getFullName()
+
+// function Person () {
+//   console.log(this === window)
+// }
+
+// Person()
+
+// var ali = {
+//   firstName: 'Ali',
+//   lastName: 'Mousavi',
+//   getFullName () {
+//     console.log(this.firstName + ' ' + this.lastName)
+//   }
+// }
+
+// var milad = {
+//   firstName: 'Milad',
+//   lastName: 'Ghajavand',
+//   getFullName: ali.getFullName
+// }
+
+// var atefe = {
+//   firstName: 'Atefe',
+//   lastName: 'Sohrabi',
+//   getFullName: milad.getFullName
+// }
+
+// ali.getFullName()
+
+// milad.getFullName()
+
+// atefe.getFullName()
+
+// var person = {
+//   firstName: 'Ali',
+//   lastName: 'Mousavi',
+//   getFullName: function () {
+//     console.log(person === this)
+//     return this.firstName + ' ' + this.lastName
+//   },
+//   family: {
+//     father: 'Mohammad',
+//     mother: 'Hajar',
+//     func () {
+//       console.log(this)
 //     }
 //   }
 // }
 
-// var func10 = func(10)
+// console.log(person.getFullName())
 
-// console.log(func10(40)(50))
+// person.family.func()
 
-// var func30 = func10(20)
-
-// console.log(func30(60))
-// console.log(func30(40))
-// console.log(func30(10))
-
-// var func50 = func10(40)
-
-// console.log(func50(80))
-
-// var result = func(10)(20)(30)
-
-// console.log(result)
-
-// console.log(a)
-
-// var a = 20
-
-// console.log(a)
-
-// func()
-
-// function func () {
-//   var a
-//   console.log(a)
-
-//   a = 10
-
-//   console.log(a)
+// var ali = {
+//   firstName: 'Ali',
+//   lastName: 'Mousavi',
+//   fullName: 'Ali Mousavi',
+//   age: 33
 // }
 
-// var c = 90
-
-// function func1 () {
-//   var a = 10
-
-//   function func2 () {
-//     var a = 50
-//     var b = 30
-//     console.log('a:', a)
-//     console.log('c:', c)
-//     window.d = 100
-//   }
-
-//   function func3 () {
-//     console.log(a)
-//     // console.log('b', b)
-//     console.log(d)
-//     f = 200
-//   }
-
-//   console.log('1', a)
-//   func2()
-//   console.log(d)
-
-//   console.log('2', a)
-//   func3()
-//   console.log(f)
+// var zahra = {
+//   firstName: 'Zahra',
+//   lastName: 'Mousavi',
+//   fullName: 'Zahra Mousavi',
+//   age: 20
 // }
 
-// func1()
+// var samira = {
+//   firstName: 'Samira',
+//   lastName: 'Keshavarz',
+//   fullName: 'Samira Keshavarz',
+//   age: 33
+// }
+
+// function Person (name, family, age) {
+//   this.firstName = name
+//   this.family = family
+//   this.fullName = this.firstName + ' ' + this.family
+//   this.age = age
+// }
+
+// var ali = new Person('Ali', 'Mousavi', 33)
+// var zahra = new Person('Zahra', 'Mousavi', 20)
+// var samira = new Person('Samira', 'Keshavarz', 33)
+
+// console.log(ali)
+// console.log(zahra)
+// console.log(samira)
+
+// console.log(ali instanceof Person)
+// console.log(110 instanceof Person)
+// console.log(ali instanceof Array)
+// console.log(zahra instanceof Person)
