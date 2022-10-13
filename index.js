@@ -1,177 +1,143 @@
-// var numbers = [4, 1, 9, 11, 2, 36, 7, 1]
-
-// var result = Math.max.apply({}, numbers)
-
-// console.log(result)
-
-var firstName = 'Ali',
-  lastName = 'Mousavi'
-
-function getFullName (greeting = 'Hello', byeMessage = 'Goodby') {
-  console.log(this)
-  console.log(greeting + ' ' + this.firstName + ' ' + this.lastName)
-  console.log(byeMessage + ' ' + this.firstName + ' ' + this.lastName)
-}
-
-var arlen = {
-  firstName: 'Arlen',
-  lastName: 'Saroyan'
-}
-
-// getFullName('salam', 'khadafez')
-
-// getFullName.call(arlen, 'Hi', 'Bye')
-
-var firoozeh = {
-  firstName: 'Firoozeh',
-  lastName: 'Dabaghi'
-}
-
-// getFullName.apply(firoozeh, ['Hi', 'Bye'])
-
-getFullName = getFullName.bind(arlen)
-
-console.log(getFullName)
-
-getFullName()
-
-// var obj1 = {
-//   name: 'Pulsar',
-//   bike: function () {
-//     console.log(this.name)
-//   }
-// }
-
-// var obj2 = { name: 'Gixxer', bike: obj1.bike }
-// var name = 'Ninja'
-// var bike = obj1.bike
-
-// bike()
-// obj1.bike()
-// obj2.bike()
-
-// var firstName = 'Fathemeh'
-// var lastName = 'MoghadmNia'
-
-// var ali = {
-//   firstName: 'Ali',
-//   lastName: 'Mousavi',
-//   getFullName () {
-//     console.log(this.firstName + ' ' + this.lastName)
-//   }
-// }
-
-// var getFullName = ali.getFullName
-
-// getFullName()
-
-// var milad = {
-//   firstName: 'Milad',
-//   lastName: 'Ghajavand',
-//   getFullName
-// }
-
-// var atefe = {
-//   firstName: 'Atefe',
-//   lastName: 'Sohrabi',
-//   getFullName
-// }
-
-// ali.getFullName()
-
-// milad.getFullName()
-
-// atefe.getFullName()
-
-// function Person () {
-//   console.log(this === window)
-// }
-
-// Person()
-
-// var ali = {
-//   firstName: 'Ali',
-//   lastName: 'Mousavi',
-//   getFullName () {
-//     console.log(this.firstName + ' ' + this.lastName)
-//   }
-// }
-
-// var milad = {
-//   firstName: 'Milad',
-//   lastName: 'Ghajavand',
-//   getFullName: ali.getFullName
-// }
-
-// var atefe = {
-//   firstName: 'Atefe',
-//   lastName: 'Sohrabi',
-//   getFullName: milad.getFullName
-// }
-
-// ali.getFullName()
-
-// milad.getFullName()
-
-// atefe.getFullName()
-
 // var person = {
-//   firstName: 'Ali',
-//   lastName: 'Mousavi',
-//   getFullName: function () {
-//     console.log(person === this)
-//     return this.firstName + ' ' + this.lastName
-//   },
-//   family: {
-//     father: 'Mohammad',
-//     mother: 'Hajar',
-//     func () {
-//       console.log(this)
-//     }
+//   name: 'Ali',
+//   family: 'Mousavi'
+// }
+
+// console.log(Object.keys(person))
+// console.log(Object.values(person))
+// console.log('name' in person)
+
+// var entries = Object.entries(person)
+
+// console.log(entries)
+
+// var obj = Object.fromEntries(entries)
+
+// console.log(obj)
+
+// var obj = {
+//   name: 'Hasan',
+//   getFullName () {
+//     return this.name + ' ' + this.family
 //   }
 // }
 
-// console.log(person.getFullName())
+// Object.defineProperty(obj, 'family', {
+//   value: 'Mousavi',
+//   writable: true,
+//   configurable: false,
+//   enumerable: false
+// })
 
-// person.family.func()
+// console.log(obj)
 
-// var ali = {
-//   firstName: 'Ali',
-//   lastName: 'Mousavi',
-//   fullName: 'Ali Mousavi',
-//   age: 33
+// Object.defineProperty(obj, 'fullName', {
+//   get: function () {
+//     return this.name + ' ' + this.family
+//   },
+//   set: function (value) {
+//     var arr = value.split(' ')
+//     this.name = arr[0]
+//     this.family = arr[1]
+//   }
+// })
+
+// console.log(obj.fullName)
+
+// obj.fullName = 'Maria Sarshar'
+
+// console.log(obj.name)
+// console.log(obj.family)
+
+// console.log(Object.getOwnPropertyDescriptor(obj, 'name'))
+// console.log(Object.getOwnPropertyDescriptor(obj, 'family'))
+
+// console.log(obj.fullName)
+
+// obj.family = 'Hasani'
+// delete obj.family
+
+// console.log(obj)
+
+// for (var key in obj) {
+//   console.log(key, obj[key])
 // }
 
-// var zahra = {
-//   firstName: 'Zahra',
-//   lastName: 'Mousavi',
-//   fullName: 'Zahra Mousavi',
-//   age: 20
+// console.log(JSON.stringify(obj))
+// console.log(obj.family)
+
+// var obj = Object.create(null)
+
+// console.log(obj)
+
+// // #ACB142
+// var person = {
+//   name: 'Ali',
+//   age: 33,
+//   gender: true,
+//   partner: undefined,
+//   birthday: new Date(),
+//   obj: {},
+//   getFullName () {
+//     // var obj = {}
+//     return 'Ali Mousavi'
+//   },
+//   symbol: Symbol()
 // }
 
-// var samira = {
-//   firstName: 'Samira',
-//   lastName: 'Keshavarz',
-//   fullName: 'Samira Keshavarz',
-//   age: 33
+// console.log(person)
+
+// var jsonPerson = JSON.stringify(person)
+
+// console.log(jsonPerson)
+// // console.log(typeof jsonPerson)
+
+// var newPerson = JSON.parse(jsonPerson)
+
+// console.log(newPerson)
+// console.log(typeof newPerson)
+
+// console.log(person === newPerson)
+
+// #14BAC2
+// var obj1 = {
+//   a: 10,
+//   // #20AB42
+//   b: {
+//     c: 20
+//   }
 // }
 
-// function Person (name, family, age) {
-//   this.firstName = name
-//   this.family = family
-//   this.fullName = this.firstName + ' ' + this.family
-//   this.age = age
-// }
+// // var obj3 = {
+// //   d: 40,
+// //   a: 80
+// // }
 
-// var ali = new Person('Ali', 'Mousavi', 33)
-// var zahra = new Person('Zahra', 'Mousavi', 20)
-// var samira = new Person('Samira', 'Keshavarz', 33)
+// // Shallow clone
+// // var obj2 = {}
+// // Object.assign(obj2, obj1)
 
-// console.log(ali)
-// console.log(zahra)
-// console.log(samira)
+// var obj2 = Object.assign({}, obj1)
 
-// console.log(ali instanceof Person)
-// console.log(110 instanceof Person)
-// console.log(ali instanceof Array)
-// console.log(zahra instanceof Person)
+// // Deep clone
+// // var obj2 = JSON.parse(JSON.stringify(obj1))
+
+// // var obj2 = obj1
+
+// obj2.a = 50
+// obj2.b.c = 100
+
+// console.log(obj1)
+// console.log(obj2)
+
+// console.log(obj1 === obj2)
+// console.log(obj1.b === obj2.b)
+
+// function Func () {}
+
+// var obj = new Func()
+
+// console.log(obj)
+
+// var obj = {}
+// console.log(obj)
