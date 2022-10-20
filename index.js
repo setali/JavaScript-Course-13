@@ -1,143 +1,227 @@
-// var person = {
-//   name: 'Ali',
-//   family: 'Mousavi'
-// }
+// var n = parseInt('101', 2)
 
-// console.log(Object.keys(person))
-// console.log(Object.values(person))
-// console.log('name' in person)
+// console.log(n)
+// console.log(typeof n)
 
-// var entries = Object.entries(person)
+// // var str = 'salam'
 
-// console.log(entries)
+// console.log(str)
+// console.log(str.length)
 
-// var obj = Object.fromEntries(entries)
+// str.length = 2
 
-// console.log(obj)
+// console.log(str)
+// console.log(str.length)
 
-// var obj = {
-//   name: 'Hasan',
-//   getFullName () {
-//     return this.name + ' ' + this.family
-//   }
-// }
+// var persons = [
+//   { name: 'Milad', age: 31, gender: 'male' },
+//   { name: 'Atefeh', age: 33, gender: 'female' },
+//   { name: 'Maedeh', age: 24, gender: 'female' },
+//   { name: 'Behrooz', age: 29, gender: 'male' },
+//   { name: 'Arlen', age: 25, gender: 'male' }
+// ]
 
-// Object.defineProperty(obj, 'family', {
-//   value: 'Mousavi',
-//   writable: true,
-//   configurable: false,
-//   enumerable: false
+// persons
+//   .sort(function (a, b) {
+//     return a.age - b.age
+//   })
+//   .reverse()
+
+// console.log(persons)
+
+// var arr = [4, 1, 31, 18, 2, 6, 35]
+
+// arr.sort(function (a, b) {
+//   return a - b
 // })
 
-// console.log(obj)
+// console.log(arr)
 
-// Object.defineProperty(obj, 'fullName', {
-//   get: function () {
-//     return this.name + ' ' + this.family
-//   },
-//   set: function (value) {
-//     var arr = value.split(' ')
-//     this.name = arr[0]
-//     this.family = arr[1]
-//   }
+// var sumAges = persons.reduce(function (acc, el) {
+//   return acc + el.age
+// }, 0)
+
+// var average = sumAges / persons.length
+
+// console.log(sumAges)
+// console.log(average)
+
+// var arr = [4, 9, 7, 3, 1, 6]
+
+// var result = arr.reduce(function (acc, el) {
+//   console.log(acc, el)
+//   return acc + el
+// }, 10)
+
+// var result = 0
+
+// arr.forEach(function (el) {
+//   result += el
 // })
 
-// console.log(obj.fullName)
-
-// obj.fullName = 'Maria Sarshar'
-
-// console.log(obj.name)
-// console.log(obj.family)
-
-// console.log(Object.getOwnPropertyDescriptor(obj, 'name'))
-// console.log(Object.getOwnPropertyDescriptor(obj, 'family'))
-
-// console.log(obj.fullName)
-
-// obj.family = 'Hasani'
-// delete obj.family
-
-// console.log(obj)
-
-// for (var key in obj) {
-//   console.log(key, obj[key])
+// for (var el of arr) {
+//   result = result + el
 // }
 
-// console.log(JSON.stringify(obj))
-// console.log(obj.family)
+// console.log(result)
 
-// var obj = Object.create(null)
+// persons.map(function (el) {
+//   console.log(el.name)
+// })
 
-// console.log(obj)
+// var names = persons.map(function (el) {
+//   return el.name
+// })
 
-// // #ACB142
-// var person = {
-//   name: 'Ali',
-//   age: 33,
-//   gender: true,
-//   partner: undefined,
-//   birthday: new Date(),
-//   obj: {},
-//   getFullName () {
-//     // var obj = {}
-//     return 'Ali Mousavi'
-//   },
-//   symbol: Symbol()
+// console.log(names)
+
+// var arr = [1, 2, 3, 4, 5]
+
+// var newArr = arr.map(function (el) {
+//   return el ** 2
+// })
+
+// console.log(newArr)
+
+// persons.forEach(function (el) {
+//   console.log(el.name)
+// })
+
+// var friends = ['Ali', 'Eli', 'Qoli', 'Fati']
+
+// friends.forEach(function (el) {
+//   console.log(el)
+// })
+
+// for (var friend of friends) {
+//   console.log(friend)
 // }
 
-// console.log(person)
-
-// var jsonPerson = JSON.stringify(person)
-
-// console.log(jsonPerson)
-// // console.log(typeof jsonPerson)
-
-// var newPerson = JSON.parse(jsonPerson)
-
-// console.log(newPerson)
-// console.log(typeof newPerson)
-
-// console.log(person === newPerson)
-
-// #14BAC2
-// var obj1 = {
-//   a: 10,
-//   // #20AB42
-//   b: {
-//     c: 20
-//   }
+// for (var i = 0; i < friends.length; i++) {
+//   console.log(friends[i])
 // }
 
-// // var obj3 = {
-// //   d: 40,
-// //   a: 80
-// // }
+// var men = persons.filter(function (el) {
+//   return el.gender === 'male'
+// })
 
-// // Shallow clone
-// // var obj2 = {}
-// // Object.assign(obj2, obj1)
+// console.log(men)
 
-// var obj2 = Object.assign({}, obj1)
+// var women = persons.filter(function (el) {
+//   return el.gender === 'female'
+// })
 
-// // Deep clone
-// // var obj2 = JSON.parse(JSON.stringify(obj1))
+// console.log(women)
 
-// // var obj2 = obj1
+// var olds = persons.filter(function (el) {
+//   return el.age >= 30
+// })
 
-// obj2.a = 50
-// obj2.b.c = 100
+// var behrooz = persons.find(function (el) {
+//   return el.name === 'Behrooz'
+// })
 
-// console.log(obj1)
-// console.log(obj2)
+// console.log(behrooz)
 
-// console.log(obj1 === obj2)
-// console.log(obj1.b === obj2.b)
+// var hasYoung = persons.some(function (el) {
+//   return el.age < 20
+// })
 
-// function Func () {}
+// console.log(hasYoung)
 
-// var obj = new Func()
+// var arr = [5, 7, 12, 36, 45, 11]
 
-// console.log(obj)
+// var odds = arr.filter(function (el) {
+//   return el % 2
+// })
 
-// var obj = {}
-// console.log(obj)
+// var evens = arr.filter(function (el) {
+//   return !(el % 2)
+// })
+
+// console.log(odds)
+// console.log(evens)
+
+// var arr = [1, 9, 3, 5, 11]
+
+// var isOdds = arr.every(function (el) {
+//   return el % 2
+// })
+
+// console.log(isOdds)
+
+// var arr = [4, 6, 2, 0, 8, 20]
+
+// var isEvens = arr.every(function (el, index, arr) {
+//   return el % 2 === 0
+//   //   if (el % 2 === 0) {
+//   //     return true
+//   //   } else {
+//   //     return false
+//   //   }
+// })
+
+// console.log(isEvens)
+
+// var arr = Array.from({ length: 100 }).fill(true, 10, 20)
+// console.log(arr)
+
+// console.log(typeof [])
+// console.log(Array.isArray([]))
+
+// console.log(Array.from('ali'))
+
+// var newArr = Array.from([1, 2, 3], function (el) {
+//   console.log(el)
+//   return el * 2
+// })
+
+// console.log(newArr)
+
+// var newArr = Array.from({ length: 100 }, function (el, index) {
+//   return index + 1
+// })
+
+// console.log(newArr)
+
+// function * generator () {
+//   yield 1
+//   yield 2
+//   yield 3
+//   yield 4
+// }
+
+// var it = generator()
+
+// console.log(it.next())
+// // console.log(it.next())
+// // console.log(it.next())
+// // console.log(it.next())
+// // console.log(it.next())
+
+// for (var el of it) {
+//   console.log(el)
+// }
+
+// var arr = ['ali', 10, true]
+// console.log(arr.toString())
+
+// var arr1 = [10]
+
+// console.log(arr1)
+// console.log(arr1.length)
+
+// var arr2 = new Array(10)
+
+// console.log(arr2)
+// console.log(arr2.length)
+
+// var arr = ['ali', 10, true]
+// var arr = new Array('ali', 10, true)
+
+// console.log(arr)
+// console.log(arr.length)
+
+// arr.length = 2
+
+// console.log(arr)
